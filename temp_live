@@ -1,0 +1,19 @@
+contract HelloWorld {
+string private text;
+
+constructor() {
+text = initialText();
+}
+
+function helloWorld() external view returns (string memory) {
+return text;
+}
+
+function setText(string calldata newText) public {
+text = newText;
+}
+
+function initialText() public pure virtual returns (string memory) {
+return "Hello World";
+}
+}
