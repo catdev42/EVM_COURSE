@@ -2,7 +2,6 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 interface IHelloWorld {
-
     function helloWorld() external view returns (string memory);
 
     function setText(string calldata newText) external;
@@ -12,7 +11,6 @@ interface IHelloWorld {
     function potato() external;
 
     function rainbow() external;
-
 }
 
 contract HelloWorld {
@@ -41,20 +39,19 @@ contract HelloWorld {
     receive() external payable {
         text = "I'm Rich!";
     }
-
 }
 
 contract Greeter {
-
-    function invokeGreeting(address target) external view returns (tring memory){
+    function invokeGreeting(
+        address target
+    ) external view returns (string memory) {
         return IHelloWorld(target).helloWorld();
     }
 
     function setGreeter(address target, string calldata newText) public {
-        IHelloWorld(target).setext(newText);
+        IHelloWorld(target).setText(newText);
     }
 }
-
 
 // contract HelloWorld {
 //     string private text;

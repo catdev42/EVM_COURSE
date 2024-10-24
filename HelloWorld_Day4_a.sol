@@ -7,8 +7,13 @@ contract HelloWorld {
 
     modifier onlyOwner()
     {
+        //is _; is here, we will change the owner first and ten check who the owner is hehe
         require (msg.sender == owner, "Caller is not the owner");
-        _;
+        _; //LEARN MORE ABOUT THIS
+    /*
+    this seems to be a special way 
+    to modity the onlyOwner thing
+    */
     }
 
     constructor() {
@@ -28,5 +33,5 @@ contract HelloWorld {
         owner = newOwner;
     }
 
-    
+
 }
